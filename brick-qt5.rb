@@ -11,7 +11,7 @@ end
 
 # Patches for Qt5 must be at the very least submitted to Qt's Gerrit codereview
 # rather than their bug-report Jira. The latter is rarely reviewed by Qt.
-class Qt5 < Formula
+class BrickQt5 < Formula
   desc "Version 5 of the Qt framework"
   homepage "https://www.qt.io/"
   url "https://download.qt.io/official_releases/qt/5.6/5.6.0/single/qt-everywhere-opensource-src-5.6.0.tar.xz"
