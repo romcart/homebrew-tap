@@ -9,19 +9,26 @@ class Vaeql < Formula
   depends_on 'homebrew/php/php70'
   depends_on 'homebrew/php/php70-opcache'
 
+  def config
+    begin
+      <<-EOS.undent
+      [vaeql]
+      extension="#{prefix}/vaeql.so"
+      EOS
+    rescue Exception
+      nil
+    end
+  end
+
+  def config_file
+    "/usr/local/etc/php/7.0/conf.d/ext-vaeql.ini"
+  end
+
   def install
     system "make"
     prefix.install "vaeql.so"
-  end
-
-  def caveats; <<-EOS.undent
-    ##
-    ## To finish installing vaeql,
-    ## add the following line to /usr/local/etc/php/7.0/php.ini
-    ## 
-    ##     extension=/usr/local/Cellar/vaeql/#{version}/vaeql.so
-    ##
-  EOS
+    IO.write("ext-vaeql.ini", config, mode: 'a')
+    system "cp", "ext-vaeql.ini", config_file
   end
 
   test do
