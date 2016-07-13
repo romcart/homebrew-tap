@@ -5,5 +5,6 @@ class VaeRemote < Formula
   version "1.0.0"
 
   def install
+    prefix.install Dir["*"]
   end
 end
