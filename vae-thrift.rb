@@ -19,7 +19,6 @@ class VaeThrift < Formula
       # OS X does not expose malloc.h as expected, remove the include
       inreplace "main.cpp", "#include <malloc.h>", ""
       system "make"
-      bin.install "vaedb"
     end
     prefix.install Dir["*"]
   end
