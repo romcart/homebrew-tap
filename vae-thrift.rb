@@ -21,6 +21,7 @@ class VaeThrift < Formula
       system "make"
       bin.install "vaedb"
     end
+    prefix.install Dir["*"]
   end
 
   test do
