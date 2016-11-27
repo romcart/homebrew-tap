@@ -20,6 +20,9 @@ class VaeThrift < Formula
       inreplace "main.cpp", "#include <malloc.h>", ""
       system "make"
     end
+    cd 'rb' do
+      system "bundle"
+    end
     prefix.install Dir["*"]
   end
 
