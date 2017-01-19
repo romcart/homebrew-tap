@@ -1,9 +1,9 @@
 class Avlibs3 < Formula
   desc ""
   homepage ""
-  url "https://github.com/bji/libs3/archive/master.zip"
-  version "master"
-  sha256 "9352223a07263937da8f1536bf95dfb26a393d9a34f53784eed6934e01b8dfe7"
+  url "https://github.com/bji/libs3/archive/bb96e59583266a7abc9be7fc5d4d4f0e9c1167cb.zip"
+  version "bb96e59583266a7abc9be7fc5d4d4f0e9c1167cb"
+  sha256 "79ac4feabde304998ca5dcaed1dd10ce79f497d7cc0c6f48a391b1f6dfdc01ef"
 
   def install
     system "mkdir", bin
