@@ -39,6 +39,8 @@ class BrickQt5 < Formula
     sha256 "48ff18be2f4050de7288bddbae7f47e949512ac4bcd126c2f504be2ac701158b"
   end
 
+  patch :DATA
+
   keg_only "Qt 5 conflicts Qt 4 (which is currently much more widely used)."
 
   option "with-docs", "Build documentation"
@@ -73,12 +75,16 @@ class BrickQt5 < Formula
       -qt-freetype
       -qt-pcre
       -nomake tests
+      -nomake examples
       -no-rpath
       -openssl-linked
       -no-securetransport
+      -sdk macosx10.11
+      -sysroot 
     ]
 
-    args << "-nomake" << "examples" if build.without? "examples"
+    #
+    #args << "-nomake" << "examples" if build.without? "examples"
 
     args << "-plugin-sql-mysql" if build.with? "mysql"
 
@@ -182,3 +188,16 @@ class BrickQt5 < Formula
     system "./hello"
   end
 end
+
+__END__
+--- ./qtwebengine/src/3rdparty/chromium/base/mac/sdk_forward_declarations.h  2017-01-13 07:37:06.000000000 -0700
++++ ./qtwebengine/src/3rdparty/chromium/base/mac/sdk_forward_declarations.h         2017-01-13 07:36:55.000000000 -0700
+@@ -15,6 +15,8 @@
+ #import <CoreWLAN/CoreWLAN.h>
+ #import <ImageCaptureCore/ImageCaptureCore.h>
+ #import <IOBluetooth/IOBluetooth.h>
++#import <CoreBluetooth/CBPeripheral.h>
++#import <CoreBluetooth/CBUUID.h>
+ 
+ #include "base/base_export.h"
+ 
