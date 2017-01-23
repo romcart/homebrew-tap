@@ -14,12 +14,9 @@ end
 class BrickQt580 < Formula
   desc "Version 5.8.0 of the Qt framework"
   homepage "https://www.qt.io/"
-#  url "https://download.qt.io/official_releases/qt/5.6/5.6.0/single/qt-everywhere-opensource-src-5.6.0.tar.xz"
-  url "https://download.qt.io/development_releases/qt/5.8/5.8.0-rc/single/qt-everywhere-opensource-src-5.8.0-rc.tar.xz"
+  url "http://download.qt.io/official_releases/qt/5.8/5.8.0/single/qt-everywhere-opensource-src-5.8.0.tar.xz"
 #  mirror "https://www.mirrorservice.org/sites/download.qt-project.org/official_releases/qt/5.6/5.6.0/single/qt-everywhere-opensource-src-5.6.0.tar.xz"
-#  sha256 "76a95cf6c1503290f75a641aa25079cd0c5a8fcd7cff07ddebff80a955b07de7"
-  sha256 "c8fde37bdbe47f2611a72e9d5ca0c7dd6ae5150779e4f1532a5c08e7e0ecc0f8"
-#  head "https://code.qt.io/qt/qt5.git", :branch => "5.6", :shallow => false
+  sha256 "0f4c54386d3dbac0606a936a7145cebb7b94b0ca2d29bc001ea49642984824b6"
   head "https://code.qt.io/qt/qt5.git", :branch => "5.8", :shallow => false
 
   bottle do
