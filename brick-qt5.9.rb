@@ -74,7 +74,7 @@ class BrickQt59 < Formula
     args = %W[
       -verbose
       -prefix #{prefix}
-      -release
+      -debug-and-release
       -opensource -confirm-license
       -system-zlib
       -qt-libpng
