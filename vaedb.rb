@@ -1,28 +1,22 @@
-class VaeThrift < Formula
-  desc "VaeThrift contains two daemons that run for the purpose of servicing Vae Remote."
-  homepage ""
-  url "https://github.com/actionverb/vae_thrift/archive/1.0.0.tar.gz"
+class Vaedb < Formula
+  desc "In-memory database for querying data stored by the Vae CMS application."
+  homepage "https://github.com/actionverb/vaedb"
+  url "https://github.com/actionverb/vaedb/archive/1.0.0.tar.gz"
   version "1.0.0"
   sha256 "697e63929ae62665a317b6596c768d33a13b679413f119b6fbb27a2332cf3546"
 
   depends_on 'pcre'
   depends_on 'zeromq'
-  depends_on 'actionverb/tap/avthrift-0.9.2'
   depends_on 'libmemcached'
   depends_on 'mysql-connector-c++'
   depends_on 'jemalloc'
   depends_on 'actionverb/tap/avlibs3'
-  
+
   def install
-    cd 'cpp' do
-      system "./configure", "--prefix=#{prefix}"
-      # OS X does not expose malloc.h as expected, remove the include
-      inreplace "main.cpp", "#include <malloc.h>", ""
-      system "make"
-    end
-    cd 'rb' do
-      system "bundle"
-    end
+    system "./configure", "--prefix=#{prefix}"
+    # OS X does not expose malloc.h as expected, remove the include
+    inreplace "main.cpp", "#include <malloc.h>", ""
+    system "make"
     prefix.install Dir["*"]
   end
 
