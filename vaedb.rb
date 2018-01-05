@@ -3,14 +3,19 @@ class Vaedb < Formula
   homepage "https://github.com/actionverb/vaedb"
   url "https://github.com/actionverb/vaedb/archive/1.0.0.tar.gz"
   version "1.0.0"
-  sha256 "697e63929ae62665a317b6596c768d33a13b679413f119b6fbb27a2332cf3546"
+  sha256 "c851a75814f098aa710a82c6f6bf5d9193411705c454cd22f4bf25fa6b325c4e"
 
+  depends_on 'boost'
+  depends_on 'cmake'
+  depends_on 'ragel'
+  depends_on 're2'
   depends_on 'pcre'
   depends_on 'zeromq'
   depends_on 'libmemcached'
   depends_on 'mysql-connector-c++'
   depends_on 'jemalloc'
   depends_on 'actionverb/tap/avlibs3'
+  depends_on 'actionverb/tap/served'
 
   def install
     system "./configure", "--prefix=#{prefix}"

@@ -3,7 +3,6 @@ class VaeFrontendCompilerService < Formula
   homepage "https://github.com/actionverb/vae-frontend-compiler-service"
   url "https://github.com/actionverb/vae-frontend-compiler-service/archive/1.0.0.tar.gz"
   version "1.0.0"
-  sha256 "697e63929ae62665a317b6596c768d33a13b679413f119b6fbb27a2332cf3546"
 
   def install
     system "bundle"
