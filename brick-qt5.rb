@@ -58,7 +58,7 @@ class BrickQt5 < Formula
   depends_on :macos => :mountain_lion
 
   depends_on "dbus" => :optional
-  depends_on :mysql => :optional
+  depends_on "mysql" => :optional
   depends_on :xcode => :build
 
   depends_on OracleHomeVarRequirement if build.with? "oci"
